@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap');
 
 * {
   margin: 0;
@@ -8,10 +10,10 @@
   list-style: none;
   scroll-behavior: smooth;
   /*outline: 1px dotted red;*/
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
+  font-family: "Sour Gummy", sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: var(--dark);
 }
 
 html,
@@ -19,6 +21,7 @@ body {
   height: 100%;
   width: 100%;
   font-size: 16px;
+  color: var(--dark);
   background-color: #fff;
 }
 
@@ -33,19 +36,39 @@ body {
   --fifth: #eee;
 }
 
+/* .sour-gummy {
+  font-family: "Sour Gummy", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-variation-settings:
+    "wdth" 100;
+} */
+
+/* .dynapuff {
+  font-family: "DynaPuff", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-variation-settings:
+  "wdth" 100;
+  } */
+
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 5rem;
-  background-color: var(--primary);
 }
 
 .nav-logo {
   display: flex;
   align-items: center;
   gap: 0.2rem;
+  border-radius: 2rem;
+  background-color: var(--light);
   cursor: pointer;
 }
 
@@ -54,34 +77,143 @@ body {
   height: auto;
 }
 
-.nav-logo-txt {
+.nav-logo-txt,
+.logo-highlight {
+  font-family: "DynaPuff", system-ui;
   font-size: 1.5rem;
   font-weight: 700;
+  font-optical-sizing: auto;
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--dark);
+}
+
+.logo-highlight {
+  color: var(--idk);
 }
 
 .nav-links {
   display: flex;
-  gap: 2rem;
+  /* gap: 1rem; */
   text-transform: uppercase;
+  border-radius: 2rem;
+  background-color: var(--light);
 }
 
-.nav-link a {
+.nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
   font-size: 1rem;
-  font-weight: 600;
+  line-height: 1;
+  border-radius: 2rem;
+  color: var(--dark);
+  background-color: transparent;
   cursor: pointer;
-  transition: color 0.3s ease;
 }
 
-.nav-link a:hover {
-  color: var(--secondary);
+.nav-link:hover {
+  background-color: var(--primary);
+  transition: background-color 0.5s ease;
+}
+
+.active li {
+  color: var(--light);
+}
+
+.active {
+  background-color: var(--fourth);
+}
+
+.active:hover {
+  background-color: var(--fourth);
 }
 
 .nav-icon {
   font-size: 1.2rem;
-  font-weight: 600;
-  cursor: pointer;
+  font-weight: 500;
+}
+
+.nav-link:has(.nav-icon) {
+  padding: 0.5rem 0.5rem;
 }
 
 .nav-link:has(.menu-icon) {
   display: none;
+}
+
+/* @media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 2rem;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary);
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  .nav-link:has(.menu-icon) {
+    display: block;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+} */
+
+.hero-section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+  gap: 5rem;
+  text-align: center;
+  background-color: var(--light);
+}
+
+.heading,
+.highlight {
+  font-size: 5rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  line-height: 1;
+}
+
+.highlight {
+  color: var(--fourth);
+}
+
+.description {
+  font-size: 1.2rem;
+  font-weight: 500;
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+.cta-button {
+  padding: 0.8rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: var(--fourth);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: var(--idk);
 }
