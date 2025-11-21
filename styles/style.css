@@ -11,10 +11,77 @@
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
+  color: var(--dark);
 }
 
 html,
 body {
   height: 100%;
   width: 100%;
+  font-size: 16px;
+  background-color: #fff;
+}
+
+:root {
+  --primary: #f6ffff;
+  --secondary: #001219;
+  --light: #ceffff;
+  --dark: #063649;
+  --third: #ffb39f;
+  --fourth: #e1683d;
+  --idk: #dd6940;
+  --fifth: #eee;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5rem;
+  background-color: var(--primary);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  cursor: pointer;
+}
+
+.nav-logo-img {
+  width: 1.5rem;
+  height: auto;
+}
+
+.nav-logo-txt {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  text-transform: uppercase;
+}
+
+.nav-link a {
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav-link a:hover {
+  color: var(--secondary);
+}
+
+.nav-icon {
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.nav-link:has(.menu-icon) {
+  display: none;
 }
