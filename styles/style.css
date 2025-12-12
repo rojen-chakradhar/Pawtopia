@@ -69,7 +69,6 @@ body {
   align-items: center;
   gap: 0.2rem;
   border-radius: 2rem;
-  background-color: var(--light);
   cursor: pointer;
 }
 
@@ -95,7 +94,6 @@ body {
 
 .nav-links {
   display: flex;
-  /* gap: 1rem; */
   text-transform: uppercase;
   border: 2px solid var(--third);
   border-radius: 2rem;
@@ -113,11 +111,10 @@ body {
   color: var(--dark);
   background-color: transparent;
   cursor: pointer;
-}
-
-.nav-link:hover {
-  background-color: var(--primary);
   transition: background-color 0.5s ease;
+  &:hover {
+    background-color: var(--third);
+  }
 }
 
 .active li {
@@ -125,11 +122,10 @@ body {
 }
 
 .active {
-  background-color: var(--fourth);
-}
-
-.active:hover {
-  background-color: var(--fourth);
+  background-color: var(--idk);
+  &:hover {
+    background-color: var(--idk);
+  }
 }
 
 .nav-icon {
@@ -172,18 +168,32 @@ body {
   }
 } */
 
-.hero-section {
+.section {
   position: relative;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   display: flex;
-  justify-content: center;
-  padding: 8rem 2rem 0;
+  flex-direction: column;
+  padding: 8rem 5rem 0;
   text-align: center;
   background-color: var(--light);
 }
 
+.hero-section {
+  height: 100vh;
+}
+
+.absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 5;
+}
+
 .heading,
+.sub-heading,
 .highlight {
   font-size: 6rem;
   font-weight: 700;
@@ -191,12 +201,167 @@ body {
   line-height: 1;
 }
 
+.heading {
+  margin-bottom: 2rem;
+}
+
+.sub-heading {
+  margin: 4rem 0 2rem 0;
+  font-size: 2rem;
+}
+
 .highlight {
   color: var(--fourth);
 }
 
+.hero-flexbox {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  margin: 0 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--light);
+  background-color: var(--fourth);
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.5s ease, color 0.4s ease;
+  &:hover {
+    color: var(--dark);
+    background-color: var(--third);
+  }
+}
+
 .dog {
   position: absolute;
-  bottom: -14rem;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -14rem;;
   z-index: 2;
+}
+
+.dog_pfp {
+  position: absolute;
+  width: 50px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  background-color: orangered;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.da1 {
+  left: 5rem;
+  top: 45%;
+  animation: float 3s ease-in-out infinite;
+}
+
+.da2 {
+  right: 5rem;
+  top: 45%;
+  animation: float 4s ease-in-out infinite;
+}
+
+.da3 {
+  left: 15rem;
+  top: 80%;
+  animation: float 3s ease-in-out infinite;
+}
+
+.da4 {
+  right: 15rem;
+  top: 80%;
+  animation: float 5s ease-in-out infinite;
+}
+
+.da5 {
+  right: 25rem;
+  top: 35%;
+  animation: float 2s ease-in-out infinite;
+}
+
+.da6 {
+  left: 25rem;
+  top: 40%;
+  animation: float 4s ease-in-out infinite;
+}
+
+.da7 {
+  right: 10rem;
+  top: 15%;
+  animation: float 3s ease-in-out infinite;
+}
+
+.da8 {
+  left: 20rem;
+  top: 10%;
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    /* transform: translateY(-10px); */
+    transform: translate(0, -10px);
+  }
+  100% {
+    transform: translate(0,0);
+  }
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.box {
+  position: relative;
+  height: 15rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 4px 4px 0 var(--dark);
+  cursor: pointer;
+  background: var(--third);
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: translateY(-10px);
+  }
+}
+
+.card-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.2;
+}
+
+.title {
+  position: relative;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--dark);
+  z-index: 2;
+  margin-top: 2rem;
 }
