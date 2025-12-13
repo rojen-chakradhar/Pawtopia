@@ -50,7 +50,13 @@ body {
   font-weight: 700;
   font-variation-settings:
   "wdth" 100;
-  } */
+} */
+
+.description {
+  font-size: 1rem;
+  line-height: 1.2;
+  color: var(--dark);
+}
 
 .navbar {
   position: fixed;
@@ -285,16 +291,29 @@ body {
   margin-top: 2rem;
 }
 
+.contact-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .contact {
   font-size: 1.2rem;
-  margin-bottom: 1rem;
   .description {
-    margin: 0.5rem 0;
+    margin: 0.5rem 0 0;
     color: var(--dark);
+    text-align: left;
     &:hover{
       color: var(--secondary);
     }
   }
+}
+
+.contact-img {
+  height: 15rem;
+  width: auto;
+  object-fit: cover;
+  object-position: center;
 }
 
 .address {
