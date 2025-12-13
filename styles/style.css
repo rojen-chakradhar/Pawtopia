@@ -128,7 +128,8 @@ body {
   }
 }
 
-.nav-icon {
+.nav-icon,
+.icon {
   font-size: 1.2rem;
   font-weight: 500;
 }
@@ -170,26 +171,17 @@ body {
 
 .section {
   position: relative;
-  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 8rem 5rem 0;
+  padding: 4rem 5rem 1rem;
   text-align: center;
   background-color: var(--light);
 }
 
 .hero-section {
   height: 100vh;
-}
-
-.absolute {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 5;
+  padding-top: 8rem;
 }
 
 .heading,
@@ -249,87 +241,14 @@ body {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: -14rem;;
+  bottom: -14rem;
   z-index: 2;
-}
-
-.dog_pfp {
-  position: absolute;
-  width: 50px;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center;
-  background-color: orangered;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.da1 {
-  left: 5rem;
-  top: 45%;
-  animation: float 3s ease-in-out infinite;
-}
-
-.da2 {
-  right: 5rem;
-  top: 45%;
-  animation: float 4s ease-in-out infinite;
-}
-
-.da3 {
-  left: 15rem;
-  top: 80%;
-  animation: float 3s ease-in-out infinite;
-}
-
-.da4 {
-  right: 15rem;
-  top: 80%;
-  animation: float 5s ease-in-out infinite;
-}
-
-.da5 {
-  right: 25rem;
-  top: 35%;
-  animation: float 2s ease-in-out infinite;
-}
-
-.da6 {
-  left: 25rem;
-  top: 40%;
-  animation: float 4s ease-in-out infinite;
-}
-
-.da7 {
-  right: 10rem;
-  top: 15%;
-  animation: float 3s ease-in-out infinite;
-}
-
-.da8 {
-  left: 20rem;
-  top: 10%;
-  animation: float 5s ease-in-out infinite;
-}
-
-@keyframes float {
-  0% {
-    transform: translate(0, 0);
-  }
-  50% {
-    /* transform: translateY(-10px); */
-    transform: translate(0, -10px);
-  }
-  100% {
-    transform: translate(0,0);
-  }
 }
 
 .service-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
-  margin-top: 4rem;
 }
 
 .box {
@@ -364,4 +283,22 @@ body {
   color: var(--dark);
   z-index: 2;
   margin-top: 2rem;
+}
+
+.contact {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  .description {
+    margin: 0.5rem 0;
+    color: var(--dark);
+    &:hover{
+      color: var(--secondary);
+    }
+  }
+}
+
+.address {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  text-transform: capitalize;
 }
