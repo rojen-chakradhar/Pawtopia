@@ -5,6 +5,11 @@ Hey there! This is a site where people can adopt, give services, and love dogs.
 ## 🚀 Tech Stack
 - **Frontend:** HTML, CSS, JavaScript
 
+## 🛠 Intructions
+- Open the github repo.
+- clone the repo.
+- run the index.html file
+
 ## 🎨 Features
 - Smooth and minimal scroll animations
 - Fully responsive layout for all devices
